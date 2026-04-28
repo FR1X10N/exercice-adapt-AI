@@ -7,9 +7,9 @@ Exercice Adapt-AI en suivant les instruction suivant [ici](Instruction/Readme.md
 
 ## Stack
 
-- **Frontend** — ...
-- **Backend** — ...
-- **Base de données** — ...
+- **Frontend** — Next.js
+- **Backend** — Node.js
+- **Base de données** — PostgreSQL + PostGIS
 
 ---
 
