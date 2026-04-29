@@ -1,6 +1,6 @@
-# Exercice Adapt-IA
+# Exercice Adapt-AI
 
-Application web Réalisé en suivant les instructions suivant [ici](Instruction/Readme.md).
+Application web pour Adapt-AI dans le cas d'un test technique réalisé en suivant les instructions suivant [ici](Instruction/Readme.md).
 
 ---
 
