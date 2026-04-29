@@ -1,7 +1,7 @@
+// Module de connexion à la base de données PostgreSQL/PostGIS.
+// en lisant les paramètres de connexion depuis les variables d'environnement.
 const { Pool } = require('pg');
 require('dotenv').config();
-
-
 
 const pool = new Pool({
   user: process.env.DB_USER,

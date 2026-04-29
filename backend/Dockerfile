@@ -1,3 +1,5 @@
+# Image Docker du backend.
+# installe les dépendances et lance directement le serveur sans étape de build.
 FROM node:22-alpine
 
 WORKDIR /app
@@ -6,8 +8,7 @@ COPY package*.json ./
 RUN npm ci
 
 COPY . .
-RUN npm run build
 
 EXPOSE 3001
 
-CMD ["node", "dist/index.js"]
+CMD ["node", "src/index.js"]

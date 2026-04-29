@@ -1,3 +1,5 @@
+// Route API pour la recherche du SIREN d'une parcelle.
+// fichier MAJIC 2021.
 const express = require('express');
 const router = express.Router();
 const pool = require('../db');
