@@ -22,7 +22,19 @@ export default function Map() {
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
       />
-      {parcelles && <GeoJSON key={JSON.stringify(parcelles).length} data={parcelles} />}
+      {parcelles && <GeoJSON data={parcelles} onEachFeature={(feature, layer) => {
+        layer.on('click', () => {
+          fetch(`http://localhost:3001/api/siren/${feature.properties.idu}`)
+            .then(res => res.json())
+            .then(data => {
+              const content = data.siren
+                ? `<b>${data.denomination ?? ''}</b><br/>SIREN : ${data.siren}`
+                : 'Pas de personne morale associée';
+              layer.bindPopup(content).openPopup();
+            })
+            .catch(() => layer.bindPopup('Erreur lors de la récupération du SIREN').openPopup());
+        }); 
+      }} /> }
     </MapContainer>
   );
 }
